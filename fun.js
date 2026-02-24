@@ -1,7 +1,7 @@
 const h1 = document.querySelector("h1");
 
 let y = 0;
-const speed = 2;
+const speed = 1; //h1 text speed
 
 h1.style.position = "fixed";
 h1.style.left = "50%";
