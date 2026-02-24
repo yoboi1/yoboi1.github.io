@@ -1,7 +1,6 @@
 body {
   background-color: ;
 }
-
 new-rocker-regular {
   font-family: "New Rocker", system-ui;
   font-weight: 400;
@@ -9,7 +8,6 @@ new-rocker-regular {
 }
 h1 {
   color: red;
-  
 }
 center {
   display: flex;
