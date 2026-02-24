@@ -1,13 +1,14 @@
 body {
-  background-color: ;
-}
-h1 {
-  color: black;
+  background-color: white ;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "New Rocker", system-ui;
   font-weight: 400;
   font-style: normal;
+}
+h1 {
+  color: black;
+
 }
 
