@@ -1,11 +1,12 @@
 body {
-  background-color: powderblue;
+  background-color: ;
 }
-h1 {
-  color: blue;
-}
+
 .new-rocker-regular {
   font-family: "New Rocker", system-ui;
   font-weight: 400;
   font-style: normal;
+}
+h1 {
+  color: red;
 }
