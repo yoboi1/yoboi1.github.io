@@ -1,0 +1,128 @@
+/* ── Base ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "New Rocker", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1 {
+  color: black;
+  font-size: 6vw;
+  white-space: nowrap;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ── Intro Overlay ── */
+#intro {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 1.8s ease;
+}
+
+#intro.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#intro.hidden {
+  display: none;
+}
+
+#intro::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.intro-text-wrap {
+  text-align: center;
+}
+
+.intro-heading {
+  font-family: 'New Rocker', system-ui;
+  font-size: clamp(3rem, 12vw, 10rem);
+  color: #fff;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: revealText 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+}
+
+.intro-line {
+  display: block;
+}
+
+.intro-bar {
+  display: none;
+}
+
+/* ── Timer Ring ── */
+.timer-ring {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  opacity: 0;
+  animation: fadeIn 0.5s ease 1.6s forwards;
+}
+
+.timer-ring svg {
+  transform: rotate(-90deg);
+}
+
+.timer-ring circle {
+  fill: none;
+  stroke: #333;
+  stroke-width: 2;
+}
+
+.timer-ring .progress {
+  stroke: #fff;
+  stroke-dasharray: 113;
+  stroke-dashoffset: 0;
+  animation: drainCircle 5s linear 0.5s forwards;
+  stroke-linecap: round;
+}
+
+/* ── Animations ── */
+@keyframes revealText {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes expandBar {
+  to { width: 100%; }
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes drainCircle {
+  to { stroke-dashoffset: 113; }
+}
