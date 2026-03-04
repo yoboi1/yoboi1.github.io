@@ -1,16 +1,17 @@
+const R2_URL = "https://pub-xxxx.r2.dev";
+// ─────────────────────────────────────────────────
+
 const img1 = document.getElementById("photo1");
 const img2 = document.getElementById("photo2");
 const btn = document.getElementById("shuffle");
 
 let landscape = [];
 let portrait = [];
-let current1 = 0;
-let current2 = 1;
 
 function loadFolder(folder, arr, callback) {
   let i = 1;
   function tryNext() {
-    const src = "images/" + folder + "/photo" + i + ".jpg";
+    const src = R2_URL + "/" + folder + "/photo" + i + ".jpg";
     const test = new Image();
     test.onload = () => {
       arr.push(src);
